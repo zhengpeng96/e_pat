@@ -92,15 +92,76 @@
                   </a>
                 </div>
               </div>
-              <div class="flexBox">
-                <div><img src="/static/images/init_36.jpg" alt=""></div>
-                <div><img src="/static/images/init_36.jpg" alt=""></div>
-                <div><img src="/static/images/init_36.jpg" alt=""></div>
-                <div><img src="/static/images/init_36.jpg" alt=""></div>
+              <div class="bscroll">
+                <div class="flexBox">
+                  <div><img src="/static/images/init_36.jpg" alt=""></div>
+                  <div><img src="/static/images/init_36.jpg" alt=""></div>
+                  <div><img src="/static/images/init_36.jpg" alt=""></div>
+                  <div><img src="/static/images/init_36.jpg" alt=""></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <Split></Split>
+        <div class="divboximg flex">
+          <div>
+            <a href="">
+              <img src="/static/images/init_25.jpg" alt="">
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img class="dog" src="/static/images/init_26.jpg" alt="">
+            </a>
+            <a href="">
+              <img class="dog" src="/static/images/init_26.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <Split></Split>
+        <div>
+          <img src="/static/images/init_18.jpg" alt="">
+        </div>
+        <Split></Split>
+        <Title></Title>
+        <Adu></Adu>
+        <Split></Split>
+        <div class="flexBox2">
+          <div>
+            <img src="/static/images/init_9.jpg" alt="">
+            <img src="/static/images/init_9.jpg" alt="">
+          </div>
+          <div>
+            <img src="/static/images/init_9.jpg" alt="">
+            <img src="/static/images/init_9.jpg" alt="">
+          </div>
+        </div>
+        <Split></Split>
+        <Title></Title>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <img src="/static/images/init_12.jpg" alt="">
+        <Split></Split>
+        <Title></Title>
+        <Swp></Swp>
+        <Title></Title>
+        <Adu></Adu>
+        <Title></Title>
+        <Adu></Adu>
+        <Foot></Foot>
       </div>
     </div>
   </div>
@@ -110,13 +171,27 @@
   import MarginBox from '../../components/MarginBox/MarginBox.vue'
   import Find_nav from '../../components/Find_nav/Find_nav.vue'
   import Swp from '../../components/Swp/Swp.vue'
-
+  import Bscroll from 'better-scroll'
+  import Split from '../../components/Split/Split.vue'
+  import Title from '../../components/Title/Title.vue'
+  import Adu from '../../components/Adu/Adu.vue'
+  import Foot from '../../components/Foot/Foot'
   export default {
+    mounted(){
+      new Bscroll('.bscroll',{
+        scrollX:true,
+        click:true
+      })
+    },
     components:{
       Overflow,
       MarginBox,
       Find_nav,
       Swp,
+      Split,
+      Title,
+      Adu,
+      Foot
     }
 }
 </script>
@@ -165,4 +240,19 @@ body
     flex 1
   .flexBox img
     width 100%
+.bscroll
+  overflow hidden
+.flex
+  display flex
+.flex div
+  width 50%
+  .dog
+    height auto
+.flexBox2
+  width 100%
+  height 200px
+  display flex
+.flexBox2 div
+  height 100px
+  width 50%
 </style>
