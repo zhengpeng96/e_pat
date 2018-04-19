@@ -1,8 +1,22 @@
 <template>
-  <div>Category</div>
+  <div>
+    <Brand :brands="brand"/>
+  </div>
 </template>
 <script>
-  export default {}
+  import {mapState} from 'vuex'
+  import Brand from '../../components/Brand/Brand.vue'
+  export default {
+    mounted(){
+      this.$store.dispatch('getBrand')
+    },
+    computed:{
+      ...mapState(['brand'])
+    },
+    components:{
+      Brand
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 

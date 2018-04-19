@@ -2,58 +2,10 @@
   <div class="find_nav">
     <div class="find_nav_list dscroll-div">
       <ul class="dscroll-ul">
-        <li class="dscroll-li on">
+        <li v-for="(menu,index) in menus" class="dscroll-li on" :key="index">
           <a href="">
                 <span class="rela">
-                  <span>首页</span>
-                  <i></i>
-                </span>
-          </a>
-        </li>
-        <li class="dscroll-li on">
-          <a href="">
-                <span class="rela">
-                  <span>首页</span>
-                  <i></i>
-                </span>
-          </a>
-        </li>
-        <li class="dscroll-li on">
-          <a href="">
-                <span class="rela">
-                  <span>首页</span>
-                  <i></i>
-                </span>
-          </a>
-        </li>
-        <li class="dscroll-li on">
-          <a href="">
-                <span class="rela">
-                  <span>首页</span>
-                  <i></i>
-                </span>
-          </a>
-        </li>
-        <li class="dscroll-li on">
-          <a href="">
-                <span class="rela">
-                  <span>首页</span>
-                  <i></i>
-                </span>
-          </a>
-        </li>
-        <li class="dscroll-li on">
-          <a href="">
-                <span class="rela">
-                  <span>首页</span>
-                  <i></i>
-                </span>
-          </a>
-        </li>
-        <li class="dscroll-li on">
-          <a href="">
-                <span class="rela">
-                  <span>首页</span>
+                  <span>{{menu.menu_name}}</span>
                   <i></i>
                 </span>
           </a>
@@ -65,6 +17,9 @@
 <script>
   import Bscroll from 'better-scroll'
   export default {
+    props:{
+      'menus':Array
+    },
     mounted(){
       new Bscroll('.find_nav',{
         scrollX:true,

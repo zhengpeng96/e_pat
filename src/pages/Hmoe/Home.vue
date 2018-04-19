@@ -1,65 +1,22 @@
 <template>
   <div>
-    <Overflow></Overflow>
+    <Overflow/>
     <div class="main">
-      <MarginBox></MarginBox>
-      <Find_nav></Find_nav>
+      <MarginBox/>
+      <div v-if="index">
+        <Find_nav :menus="index.menus"/>
+      </div>
       <div class="allmodule module">
-        <div>
-          <Swp></Swp>
+        <div v-if="carousel.data" >
+          <Swp :imgs="carousel.data[1].value"/>
         </div>
         <div>
           <div class="columnnavdiv">
             <div>
-              <ul class="hottype">
-                <li>
+              <ul class="hottype"v-if="index.datas">
+                <li  v-for="(menu,index) in index.datas[1].menus" :key="index">
                   <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img src="/static/images/init_3.jpg" alt="">
+                    <img :src="menu.image" alt="">
                   </a>
                 </li>
               </ul>
@@ -69,7 +26,7 @@
         <div>
           <div class="banner_item">
             <a href="">
-              <img src="/static/images/01%20(1).gif" alt="">
+              <img v-if="carousel.data" :src="carousel.data[2438].value[0].image" alt="">
             </a>
           </div>
         </div>
@@ -92,106 +49,116 @@
                   </a>
                 </div>
               </div>
-              <div class="bscroll">
-                <div class="flexBox">
-                  <div><img src="/static/images/init_36.jpg" alt=""></div>
-                  <div><img src="/static/images/init_36.jpg" alt=""></div>
-                  <div><img src="/static/images/init_36.jpg" alt=""></div>
-                  <div><img src="/static/images/init_36.jpg" alt=""></div>
+              <div class="bscroll"  v-if="carousel.data">
+                <div class="flexBox" v-if="carousel.data['3']">
+                  <div v-for="(good,index) in carousel.data['3'].goods" :key="index"><img :src="good.image.image" alt=""></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <Split></Split>
-        <div class="divboximg flex">
+        <Split/>
+        <div class="divboximg flex" v-if="index.datas">
           <div>
             <a href="">
-              <img src="/static/images/init_25.jpg" alt="">
+              <img :src="index.datas[5].content_images[0][0].image" alt="">
             </a>
           </div>
           <div>
             <a href="">
-              <img class="dog" src="/static/images/init_26.jpg" alt="">
+              <img class="dog" :src="index.datas[5].content_images[1][0].image" alt="">
             </a>
             <a href="">
-              <img class="dog" src="/static/images/init_26.jpg" alt="">
+              <img class="dog" :src="index.datas[5].content_images[1][1].image" alt="">
             </a>
           </div>
         </div>
-        <Split></Split>
-        <div>
-          <img src="/static/images/init_18.jpg" alt="">
+        <Split/>
+        <div v-if="index.datas">
+          <img :src="index.datas[7].value[0].image" alt="">
         </div>
-        <Split></Split>
-        <Title></Title>
-        <Adu></Adu>
-        <Split></Split>
+        <Split/>
+        <div v-if="index.datas">
+          <Title :title="index.datas[9].value.left.img.image"  v-if="index.datas"/>
+        </div>
+        <div v-if="index.datas">
+          <Adu :value="index.datas[10].value[0]" v-if="index.datas"/>
+        </div>
+        <Split/>
         <div class="flexBox2">
-          <div>
-            <img src="/static/images/init_9.jpg" alt="">
-            <img src="/static/images/init_9.jpg" alt="">
+          <div v-if="carousel.data">
+            <img :src="carousel.data[3110].content_images[0][0].image" alt="">
+            <img :src="carousel.data[3110].content_images[0][1].image" alt="">
           </div>
-          <div>
-            <img src="/static/images/init_9.jpg" alt="">
-            <img src="/static/images/init_9.jpg" alt="">
+          <div v-if="carousel.data">
+            <img :src="carousel.data[3110].content_images[1][0].image" alt="">
+            <img :src="carousel.data[3110].content_images[1][1].image" alt="">
           </div>
         </div>
-        <Split></Split>
-        <Title></Title>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <img src="/static/images/init_12.jpg" alt="">
-        <Split></Split>
-        <Title></Title>
-        <Swp></Swp>
-        <Title></Title>
-        <Adu></Adu>
-        <Title></Title>
-        <Adu></Adu>
-        <Foot></Foot>
+        <Split/>
+        <Title :title="index.datas[14].value.left.img.image" v-if="index.datas"/>
+        <img :src="index.datas[17].content_images[0][0].image" alt=""  v-if="index.datas">
+        <Split/>
+        <img :src="index.datas[19].content_images[0][0].image" alt="" v-if="index.datas">
+        <Split/>
+        <img :src="index.datas[21].content_images[0][0].image" alt="" v-if="index.datas">
+        <Split/>
+        <img :src="index.datas[23].content_images[0][0].image" alt="" v-if="index.datas">
+        <Split/>
+        <img :src="index.datas[25].content_images[0][0].image" alt="" v-if="index.datas">
+        <Split/>
+        <img :src="index.datas[27].content_images[0][0].image" alt="" v-if="index.datas">
+        <Split/>
+        <img :src="index.datas[29].content_images[0][0].image" alt="" v-if="index.datas">
+        <Split/>
+        <img :src="index.datas[31].content_images[0][0].image" alt="" v-if="index.datas">
+        <Split/>
+        <Title :title="index.datas[46].value.left.img.image" v-if="index.datas"/>
+        <Adu :value="index.datas[47].value[0]" v-if="index.datas"/>
+        <Split/>
+        <Title :title="index.datas[49].value.left.img.image" v-if="index.datas"/>
+        <Adu :value="index.datas[50].value[0]" v-if="index.datas"/>
+        <Foot :img="index.datas[52].content_images[0][0].image" v-if="index.datas"/>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import {mapState} from 'vuex'
   import Overflow from '../../components/Overflow/Overflow.vue'
   import MarginBox from '../../components/MarginBox/MarginBox.vue'
   import Find_nav from '../../components/Find_nav/Find_nav.vue'
   import Swp from '../../components/Swp/Swp.vue'
   import Bscroll from 'better-scroll'
-  import Split from '../../components/Split/Split.vue'
   import Title from '../../components/Title/Title.vue'
   import Adu from '../../components/Adu/Adu.vue'
   import Foot from '../../components/Foot/Foot'
   export default {
     mounted(){
-      new Bscroll('.bscroll',{
-        scrollX:true,
-        click:true
-      })
+      this.$store.dispatch('getIndex')
+      this.$store.dispatch('getCarousel')
+    },
+    computed:{
+      ...mapState(['index','carousel'])
     },
     components:{
       Overflow,
       MarginBox,
       Find_nav,
       Swp,
-      Split,
       Title,
       Adu,
       Foot
+    },
+    watch:{
+      carousel (value){
+        this.$nextTick(() => { // 回调函数在DOM更新之后立即调用
+          new Bscroll('.bscroll',{
+            scrollX:true,
+            click:true
+          })
+        })
+      }
     }
 }
 </script>

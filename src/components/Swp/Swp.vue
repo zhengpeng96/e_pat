@@ -4,34 +4,9 @@
       <div class="banner_item">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div v-for="(img,index) in imgs" :key="index" class="swiper-slide" >
               <a href="">
-                <img src="/static/images/lunbo/12.jpg" alt="">
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <img src="/static/images/lunbo/13.jpg" alt="">
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <img src="/static/images/lunbo/14.jpg" alt="">
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <img src="/static/images/lunbo/15.jpg" alt="">
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <img src="/static/images/lunbo/16.jpg" alt="">
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="">
-                <img src="/static/images/lunbo/17.jpg" alt="">
+                <img :src="img.image" alt="">
               </a>
             </div>
           </div>
@@ -52,6 +27,9 @@
   import Swiper from 'swiper'
   import 'swiper/dist/css/swiper.min.css'
   export default {
+    props:{
+      'imgs':Array
+    },
     mounted(){
       new Swiper ('.swiper-container', {
         loop: true,

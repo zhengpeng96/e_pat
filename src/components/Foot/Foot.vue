@@ -1,6 +1,6 @@
 <template>
   <div class="warpper">
-    <img src="/static/images/footerbottom.jpg" alt="">
+    <img :src="img" alt="">
     <div class="zong">
       <div class="top">
         <a href="#">触屏版</a>
@@ -9,13 +9,17 @@
         <a href="#">联系我们</a>
       </div>
       <div class="bottom">
-        <a href="#">? wap.epet.com 版权：重庆易宠科技有限公司</a>
+        <a href="#">wap.epet.com 版权：重庆易宠科技有限公司</a>
       </div>
     </div>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    props:{
+      "img":String
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .warpper
@@ -24,6 +28,7 @@
     margin-bottom 57px
     img
       width 100%
+      height: 30.5px
     .zong
       margin-bottom 45px
       width 100%

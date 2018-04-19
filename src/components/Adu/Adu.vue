@@ -1,21 +1,25 @@
 <template>
-<div>
+<div >
   <div>
-    <img src="/static/images/init_32.jpg" alt="">
+    <img :src="value.cover.image" alt="">
   </div>
   <div class="ft12">
-    <div>SodaPup 易拉罐漏食狗玩具 口感软弹洁牙护牙</div>
+    <div>{{value.title}}</div>
     <div>
       <span></span>
-      <i>8620</i>
+      <i>{{value.vid}}</i>
       <span class="ml10 mr10">|</span>
-      "01:29"
+      {{value.time}}
     </div>
   </div>
 </div>
 </template>
 <script>
-  export default {}
+  export default {
+    props:{
+      'value':{}
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .ft12

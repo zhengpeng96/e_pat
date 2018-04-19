@@ -2,7 +2,7 @@
   <div class="custom_tite" style="height: 80px;">
     <div class="titmoudle">
       <div class="leftimg">
-        <img src="/static/images/init_15.jpg" alt="">
+        <img :src="title" alt="">
       </div>
       <div class="more more2">
         <img src="/static/images/init_22.jpg" alt="">
@@ -11,7 +11,11 @@
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    props:{
+      'title':String,
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .titmoudle
